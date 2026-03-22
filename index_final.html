@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Turtle Онлайн Редактор</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐢 Python Turtle Онлайн Редактор</h1>
+            <p>Пишите код и сразу видите результат!</p>
+        </header>
+        
+        <div class="controls" style="display: flex !important; justify-content: center !important; gap: 10px !important; margin-bottom: 20px !important;">
+            <button id="runBtn" class="btn btn-primary" style="display: inline-flex !important;">▶ Запустить</button>
+            <button id="clearBtn" class="btn btn-secondary" style="display: inline-flex !important;">🗑️ Очистить</button>
+            <select id="examples" class="btn btn-secondary" style="display: inline-flex !important;">
+                <option value="">📚 Выбрать пример...</option>
+                <option value="square">Квадрат</option>
+                <option value="star">Звезда</option>
+                <option value="spiral">Спираль</option>
+                <option value="flower">Цветок</option>
+                <option value="rainbow">Радуга</option>
+            </select>
+        </div>
+        
+        <main class="editor-container">
+            <div class="code-panel">
+                <h3>📝 Код</h3>
+                <textarea id="codeEditor"># Python Turtle код
+import turtle
+
+# Создаем черепашку
+t = turtle.Turtle()
+t.speed(5)
+
+# Рисуем квадрат
+for i in range(4):
+    t.forward(100)
+    t.right(90)
+
+# Завершаем рисование
+turtle.done()</textarea>
+            </div>
+            
+            <div class="canvas-panel">
+                <h3>🎨 Результат</h3>
+                <div class="canvas-controls">
+                    <button id="zoomInBtn" class="btn-small">🔍+</button>
+                    <button id="zoomOutBtn" class="btn-small">🔍-</button>
+                    <button id="resetViewBtn" class="btn-small">🎯</button>
+                    <span class="zoom-info">Масштаб: <span id="zoomLevel">100%</span></span>
+                </div>
+                <div id="turtleCanvas" class="canvas-container">
+                    <canvas id="canvas" width="800" height="800" style="max-width: 400px; max-height: 400px;"></canvas>
+                </div>
+                <div id="output" class="output"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Сделано с ❤️ для изучения Python Turtle | Используйте колесо мыши для масштабирования</p>
+        </footer>
+    </div>
+    
+    <script src="script_final.js"></script>
+</body>
+</html>
