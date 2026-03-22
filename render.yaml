@@ -1,0 +1,24 @@
+services:
+  # Python Web Service
+  - type: web
+    name: python-turtle-editor
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    autoDeploy: true
+    
+    # Environment variables
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: FLASK_ENV
+        value: production
+    
+    # Health check
+    healthCheckPath: /
+    
+    # Port configuration
+    ports:
+      - port: 5000
+        protocol: HTTP
