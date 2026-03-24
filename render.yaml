@@ -11,9 +11,11 @@ services:
     # Environment variables
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.0
+        value: 3.9.16
       - key: FLASK_ENV
         value: production
+      - key: APT_PACKAGES
+        value: "python3-tk"
     
     # Health check
     healthCheckPath: /
