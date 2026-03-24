@@ -42,14 +42,17 @@ import turtle
 
 # Создаем черепашку
 t = turtle.Turtle()
-t.speed(5)
+t.speed(0)
 
-# Рисуем квадрат
-for i in range(4):
-    t.forward(100)
-    t.right(90)
+colors = ['#FF006E', '#FB5607', '#FFBE0B', '#8338EC', '#3A86FF', '#06FFA5']
 
-# Завершаем рисование
+# Рисуем концентрические круги
+for i in range(len(colors)):
+    t.pencolor(colors[i])
+    t.pensize(3)
+    t.circle(100 - i * 15)
+    
+t.hideturtle()
 turtle.done()</textarea>
             </div>
             

@@ -13,6 +13,7 @@ class SimpleTurtle:
         self.pen_down = True
         self.color = "black"
         self.width = 1
+        self.speed_value = 5
         self.lines = []
         self.dots = []
         
@@ -53,7 +54,10 @@ class SimpleTurtle:
         self.width = width
     
     def speed(self, speed):
-        pass
+        if speed == 0:
+            self.speed_value = 0  # Самая быстрая скорость
+        else:
+            self.speed_value = speed
     
     def goto(self, x, y):
         if self.pen_down:
